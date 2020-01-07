@@ -1,7 +1,19 @@
 class Timer {
-  constructor(message) {
-    console.log(message);
+  constructor(durationInput, startButton, pauseButton) {
+    this.durationInput = durationInput;
+    this.startButton = startButton;
+    this.pauseButton = pauseButton;
+
+    this.startButton.addEventListener("click", this.start);
+  }
+
+  start() {
+    console.log("Timer Start");
   }
 }
 
-new Timer("Hello Baby");
+const durationInput = document.querySelector("#duration");
+const startButton = document.querySelector("#start");
+const pauseButton = document.querySelector("#pause");
+
+const timer = new Timer(durationInput, startButton, pauseButton);
